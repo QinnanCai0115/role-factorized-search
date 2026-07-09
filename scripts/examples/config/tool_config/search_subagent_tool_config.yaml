@@ -1,0 +1,21 @@
+tools:
+  - class_name: verl.tools.search_subagent_tool.SearchSubagentTool
+    config:
+      retrieval_service_url: http://162.30.4.229:8765/search
+      topk: 3
+      timeout: 180
+      max_concurrent: 64
+      type: native
+    tool_schema:
+      type: function
+      function:
+        name: search_subagent
+        description: Simple retrieval tool. Given a query, return structured raw documents for the policy model to read and summarize.
+        parameters:
+          type: object
+          properties:
+            query:
+              type: string
+              description: Search query for this retrieval call. Use specific, evidence-seeking phrasing.
+          required:
+            - query

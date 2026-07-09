@@ -1,0 +1,42 @@
+# Python/cache
+__pycache__/
+*.pyc
+.cache/
+.pytest_cache/
+
+# environments/secrets
+.env
+*.env
+.secrets/
+.venv/
+venv/
+
+# logs and experiment outputs
+*.log
+*.out
+logs/
+outputs/
+runs/
+wandb/
+tensorboard_log/
+tmp_logs/
+tmp_*/
+tmp_*.*
+
+# checkpoints/model weights
+checkpoints/
+ckpt/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# packages
+*.whl
+
+# large/generated rollout artifacts: publish separately as dataset release
+data/deepseek_policy_sft_rollouts/
+data/qwen3_policy_sft_rollouts/
+data/direct_search_budget_matched/
+data/deepseek_baseline/
