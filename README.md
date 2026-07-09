@@ -1,8 +1,42 @@
 # Role-Factorized Search
 
-This repository contains the open-release code and base data splits for role-factorized search experiments. The core setup separates the backbone/orchestrator role from the sub-agent execution role, and uses supervised fine-tuning data generated from search-oriented rollouts.
+Code and base data splits for **Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?**
 
-The repository is intentionally kept small and reproducible. Large rollout traces, checkpoints, logs, TensorBoard files, and private server paths are excluded from this code release and should be published separately as dataset artifacts after sanitization.
+- Paper: [arXiv:2607.07548](https://arxiv.org/abs/2607.07548)
+- PDF: [https://arxiv.org/pdf/2607.07548](https://arxiv.org/pdf/2607.07548)
+- Authors: Qinnan Cai, Yibo Zhao, Xiang Li
+
+## Overview
+
+Large language model search agents often use hierarchical or multi-agent designs, but prior systems usually instantiate the main agent and sub-agents with the same model scale. This project studies where model capacity actually matters in hierarchical search.
+
+We factorize the search pipeline into three roles:
+
+- **Delegation**: the backbone/orchestrator decomposes the original question into sub-queries.
+- **Execution**: the sub-agent performs retrieval and extracts evidence for delegated sub-queries.
+- **Answer generation**: the final answer generator is held fixed to isolate delegation and execution effects.
+
+Main findings from the paper:
+
+- Role-factorized search consistently improves over single-agent search across model scales.
+- Capacity is asymmetric across roles: scaling the delegation backbone matters much more than scaling the execution sub-agent, suggesting decomposition is the main bottleneck.
+- A small 1.7B executor trained with quality-filtered trajectory distillation can match a frontier sub-agent while using substantially fewer sub-agent tokens.
+
+## Citation
+
+If you use this code or data, please cite:
+
+```bibtex
+@misc{cai2026thinkbigsearchsmall,
+  title         = {Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?},
+  author        = {Qinnan Cai and Yibo Zhao and Xiang Li},
+  year          = {2026},
+  eprint        = {2607.07548},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2607.07548}
+}
+```
 
 ## Contents
 
@@ -18,13 +52,17 @@ The repository is intentionally kept small and reproducible. Large rollout trace
 ### Generate SFT Rollouts
 
 ```bash
-python scripts/examples/search_r1_like/generate_sft_rollout.py   --input data/hotpotqa_2wiki_musique_train/train_mixed_2000_sft.jsonl   --output data/qwen3_policy_sft_rollouts/train_mixed_2000.policy.sft.jsonl
+python scripts/examples/search_r1_like/generate_sft_rollout.py \
+  --input data/hotpotqa_2wiki_musique_train/train_mixed_2000_sft.jsonl \
+  --output data/qwen3_policy_sft_rollouts/train_mixed_2000.policy.sft.jsonl
 ```
 
 ### Convert SFT JSONL to Parquet
 
 ```bash
-python scripts/examples/search_r1_like/convert_policy_sft_jsonl_to_parquet.py   --input path/to/policy.sft.jsonl   --output path/to/policy.verl_sft.parquet
+python scripts/examples/search_r1_like/convert_policy_sft_jsonl_to_parquet.py \
+  --input path/to/policy.sft.jsonl \
+  --output path/to/policy.verl_sft.parquet
 ```
 
 ### Run SFT
