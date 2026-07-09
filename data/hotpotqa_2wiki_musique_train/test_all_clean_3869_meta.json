@@ -1,0 +1,25 @@
+{
+  "source_test_file": "data/hotpotqa_2wiki_musique_train/test_all.jsonl",
+  "source_trace_file": "/ai/cqn/s3/ckpt/search_subagent_api_policy_test_all_mean4/test_all_mean4_policy_temp06_nothink/naive_policy_api/repeat1/orchestrator_traces.jsonl",
+  "definition": "Exclude source_index values whose initial backbone_output response has no literal <search> in orchestrator_chain.",
+  "original_count": 4125,
+  "trace_rows": 4125,
+  "missing_initial_backbone_response_count": 4,
+  "excluded_count": 256,
+  "kept_count": 3869,
+  "excluded_by_dataset": {
+    "2wikimultihopqa": 9,
+    "bamboogle": 16,
+    "hotpotqa": 37,
+    "musique": 12,
+    "popqa": 182
+  },
+  "kept_by_dataset": {
+    "2wikimultihopqa": 991,
+    "bamboogle": 109,
+    "hotpotqa": 963,
+    "musique": 988,
+    "popqa": 818
+  },
+  "excluded_source_indices_file": "data/hotpotqa_2wiki_musique_train/test_all_clean_3869_excluded_source_indices.txt"
+}
