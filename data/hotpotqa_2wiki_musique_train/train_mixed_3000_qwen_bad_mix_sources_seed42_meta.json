@@ -1,0 +1,40 @@
+{
+  "created_from": {
+    "sft_records_path": "/ai/cqn/datacon/data/deepseek_policy_sft_rollouts/fixed_policy_replay/sft_candidates/mixed_second_search_qwen_bad_668_plus_qwen_naive_1000_plus_deepseek_one_search_500.no_think.sft.jsonl",
+    "source_train_path": "/ai/cqn/datacon/data/hotpotqa_2wiki_musique_train/train_mixed_9000.jsonl"
+  },
+  "sft_record_count": 2168,
+  "retained_unique_source_index_count": 1591,
+  "supplemental_source_index_count": 1409,
+  "final_source_index_count": 3000,
+  "deduplicated": true,
+  "seed": 42,
+  "selection_policy": "Keep all 1591 unique source_index values from the 2168-record qwen-bad SFT corpus, then sample non-overlapping source_index values from train_mixed_9000 with seed=42 to reach 1000 examples per dataset.",
+  "retained_by_dataset": {
+    "2wiki": 627,
+    "hotpotqa": 475,
+    "musique": 489
+  },
+  "supplemental_by_dataset": {
+    "2wiki": 373,
+    "hotpotqa": 525,
+    "musique": 511
+  },
+  "final_by_dataset": {
+    "2wiki": 1000,
+    "hotpotqa": 1000,
+    "musique": 1000
+  },
+  "output_files": {
+    "jsonl": "/ai/cqn/datacon/data/hotpotqa_2wiki_musique_train/train_mixed_3000_qwen_bad_mix_sources_seed42.jsonl",
+    "all_source_indices": "/ai/cqn/datacon/data/hotpotqa_2wiki_musique_train/train_mixed_3000_qwen_bad_mix_sources_seed42_source_indices.txt",
+    "retained_source_indices": "/ai/cqn/datacon/data/hotpotqa_2wiki_musique_train/train_mixed_3000_qwen_bad_mix_sources_seed42_retained_1591_source_indices.txt",
+    "supplemental_source_indices": "/ai/cqn/datacon/data/hotpotqa_2wiki_musique_train/train_mixed_3000_qwen_bad_mix_sources_seed42_supplemental_1409_source_indices.txt"
+  },
+  "sha256": {
+    "train_mixed_3000_qwen_bad_mix_sources_seed42.jsonl": "11d83493ba52e0d063a36fd478842fb70996e5f9385bb59b4428ce476b827d47",
+    "train_mixed_3000_qwen_bad_mix_sources_seed42_source_indices.txt": "97fb0175900c5a0fc652e487890d0842ecbeebe97a534d85a6c94778edf0d837",
+    "train_mixed_3000_qwen_bad_mix_sources_seed42_retained_1591_source_indices.txt": "86de90ad40d04b6633724175ace4d6fb95ac2fb010e04c99573817a6025666ba",
+    "train_mixed_3000_qwen_bad_mix_sources_seed42_supplemental_1409_source_indices.txt": "82cf3520538c08fa9c7fd9d94e1cb0aacdbd1d94928f0da0a9e5f3876305c5cc"
+  }
+}
