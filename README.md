@@ -42,7 +42,7 @@ If you use this code or data, please cite:
 
 - `verl/`: SFT training framework. The main trainer used by this project is `python -m verl.trainer.sft_trainer`.
 - `scripts/examples/search_r1_like/`: experiment scripts for rollout generation, SFT data conversion, SFT training, judging, replay, and diagnostics.
-- `scripts/baselines/`: baseline scripts such as no-retrieval, direct-search, Search-R1-style, and retrieval baselines.
+- `scripts/baselines/`: baseline scripts such as no-retrieval and direct-search comparisons.
 - `scripts/evaluation/`: EM/F1, context, and evaluation utilities.
 - `data/hotpotqa_2wiki_musique_train/`: base train/validation/test splits.
 - `data/FlashRAG_datasets/bamboogle/test.jsonl`: Bamboogle test source.
