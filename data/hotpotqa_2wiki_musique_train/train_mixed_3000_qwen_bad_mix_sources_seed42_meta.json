@@ -36,5 +36,9 @@
     "train_mixed_3000_qwen_bad_mix_sources_seed42_source_indices.txt": "97fb0175900c5a0fc652e487890d0842ecbeebe97a534d85a6c94778edf0d837",
     "train_mixed_3000_qwen_bad_mix_sources_seed42_retained_1591_source_indices.txt": "86de90ad40d04b6633724175ace4d6fb95ac2fb010e04c99573817a6025666ba",
     "train_mixed_3000_qwen_bad_mix_sources_seed42_supplemental_1409_source_indices.txt": "82cf3520538c08fa9c7fd9d94e1cb0aacdbd1d94928f0da0a9e5f3876305c5cc"
+  },
+  "released_training_files": {
+    "jsonl": "data/hotpotqa_2wiki_musique_train/train_mixed3000.jsonl",
+    "parquet": "data/hotpotqa_2wiki_musique_train/train_mixed3000.parquet"
   }
 }

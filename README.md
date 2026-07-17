@@ -93,17 +93,15 @@ python scripts/examples/search_r1_like/extract_round_traces.py
 
 ## Data Included
 
-The base split directory contains:
+The released data directory contains the 3,000-source training set and evaluation splits:
 
 ```text
+data/hotpotqa_2wiki_musique_train/train_mixed3000.jsonl
+data/hotpotqa_2wiki_musique_train/train_mixed3000.parquet
 data/hotpotqa_2wiki_musique_train/test_all.jsonl
 data/hotpotqa_2wiki_musique_train/test_all.parquet
-data/hotpotqa_2wiki_musique_train/train_mixed_2000_sft.jsonl
-data/hotpotqa_2wiki_musique_train/train_mixed_7000_rl.jsonl
-data/hotpotqa_2wiki_musique_train/train_mixed_7000_rl.parquet
-data/hotpotqa_2wiki_musique_train/train_mixed_9000.jsonl
-data/hotpotqa_2wiki_musique_train/train_mixed_9000.parquet
-data/hotpotqa_2wiki_musique_train/train_mixed_extra3000_balanced_sft_seed42.jsonl
+data/hotpotqa_2wiki_musique_train/test_all_clean_3869.jsonl
+data/hotpotqa_2wiki_musique_train/test_all_clean_3869.parquet
 data/hotpotqa_2wiki_musique_train/val_mixed_900.parquet
 ```
 
