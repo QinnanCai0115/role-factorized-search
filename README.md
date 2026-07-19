@@ -52,8 +52,8 @@ If you use this code or data, please cite:
 
 ```bash
 python scripts/examples/search_r1_like/generate_sft_rollout.py \
-  --input data/hotpotqa_2wiki_musique_train/train_mixed_2000_sft.jsonl \
-  --output data/qwen3_policy_sft_rollouts/train_mixed_2000.policy.sft.jsonl
+  --input data/hotpotqa_2wiki_musique_train/train_mixed3000.jsonl \
+  --output data/qwen3_policy_sft_rollouts/train_mixed3000.policy.sft.jsonl
 ```
 
 ### Convert SFT JSONL to Parquet
