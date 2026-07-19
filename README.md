@@ -22,6 +22,26 @@ Main findings from the paper:
 - Capacity is asymmetric across roles: scaling the delegation backbone matters much more than scaling the execution sub-agent, suggesting decomposition is the main bottleneck.
 - A small 1.7B executor trained with quality-filtered trajectory distillation can match a frontier sub-agent while using substantially fewer sub-agent tokens.
 
+## Method And Findings
+
+<p align="center">
+  <img src="assets/figures/method.png" alt="Role-factorized search system overview" width="95%">
+</p>
+
+Role-factorized search separates open-domain QA into three controlled roles: a main agent delegates focused evidence requests, sub-agents retrieve and summarize supporting evidence, and a frozen answer generator produces the final answer. This design lets us ask where model capacity is most useful instead of scaling every role together.
+
+<p align="center">
+  <img src="assets/figures/asymmetry.png" alt="Delegation and execution capacity asymmetry" width="80%">
+</p>
+
+The controlled sweeps show a clear role asymmetry. Scaling the decomposition backbone gives much larger gains than scaling the execution sub-agent, indicating that the main bottleneck is deciding what to search for, not simply making the search executor larger.
+
+<p align="center">
+  <img src="assets/figures/pareto.png" alt="Compact SFT sub-agent Pareto frontier" width="70%">
+</p>
+
+Quality-filtered trajectory distillation turns a compact Qwen3-1.7B sub-agent into an effective executor. It reaches a stronger judge score while using fewer sub-agent tokens than much larger or frontier executors, improving the effectiveness-efficiency tradeoff.
+
 ## Citation
 
 If you use this code or data, please cite:
