@@ -2,10 +2,6 @@
 
 Code and base data splits for **Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?**
 
-- Paper: [arXiv:2607.07548](https://arxiv.org/abs/2607.07548)
-- PDF: [https://arxiv.org/pdf/2607.07548](https://arxiv.org/pdf/2607.07548)
-- Authors: Qinnan Cai, Yibo Zhao, Xiang Li
-
 ## Overview
 
 Large language model search agents often use hierarchical or multi-agent designs, but prior systems usually instantiate the main agent and sub-agents with the same model scale. This project studies where model capacity actually matters in hierarchical search.
@@ -42,21 +38,7 @@ The controlled sweeps show a clear role asymmetry. Scaling the decomposition bac
 
 Quality-filtered trajectory distillation turns a compact Qwen3-1.7B sub-agent into an effective executor. It reaches a stronger judge score while using fewer sub-agent tokens than much larger or frontier executors, improving the effectiveness-efficiency tradeoff.
 
-## Citation
 
-If you use this code or data, please cite:
-
-```bibtex
-@misc{cai2026thinkbigsearchsmall,
-  title         = {Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?},
-  author        = {Qinnan Cai and Yibo Zhao and Xiang Li},
-  year          = {2026},
-  eprint        = {2607.07548},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
-  url           = {https://arxiv.org/abs/2607.07548}
-}
-```
 
 ## Contents
 
